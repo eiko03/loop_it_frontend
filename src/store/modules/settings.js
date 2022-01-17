@@ -1,4 +1,5 @@
 import defaultSettings from '@/settings'
+import { getCar, createCar, updateCar } from '@/api/table'
 
 const { showSettings, fixedHeader, sidebarLogo } = defaultSettings
 
@@ -20,6 +21,35 @@ const mutations = {
 const actions = {
   changeSetting({ commit }, data) {
     commit('CHANGE_SETTING', data)
+  },
+  carCreate({ commit }, carInfo) {
+    const { model, brand } = carInfo
+    return new Promise((resolve, reject) => {
+      createCar({ model: model, brand: brand }).then(response => {
+        resolve()
+      }).catch(error => {
+        reject(error)
+      })
+    })
+  },
+  carUpdate({ commit }, carInfo) {
+    const { id, model, brand } = carInfo
+    return new Promise((resolve, reject) => {
+      updateCar({ id: id, model: model, brand: brand }).then(response => {
+        resolve()
+      }).catch(error => {
+        reject(error)
+      })
+    })
+  },
+  carGet({ commit }, carId) {
+    return new Promise((resolve, reject) => {
+      getCar(carId).then(response => {
+        resolve(response.data)
+      }).catch(error => {
+        reject(error)
+      })
+    })
   }
 }
 
