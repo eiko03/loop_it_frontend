@@ -36,6 +36,14 @@
         </template>
       </el-table-column>
     </el-table>
+    <el-pagination
+      layout="total, sizes, prev, pager, next, jumper"
+      :page-size="list_total.per_page"
+      :current-page="list_total.current_page"
+      :total="list_total.total"
+      @current-change="setPage"
+    >
+    </el-pagination>
   </div>
 </template>
 
@@ -56,16 +64,33 @@ export default {
   data() {
     return {
       list: null,
-      listLoading: true
+      listLoading: true,
+      list_total: {
+        total: null,
+        current_page: null,
+        per_page: null
+      },
+      page: 1,
+      pageSize: 10
+    }
+  },
+  computed: {
+    pagedTableData() {
+      return this.list.slice(this.pageSize * this.page - this.pageSize, this.pageSize * this.page)
     }
   },
   created() {
-    this.fetchData()
+    this.fetchData({ 'page': this.page })
   },
   methods: {
-    fetchData() {
+    setPage(val) {
+      this.page = val
+      this.fetchData({ 'page': this.page })
+    },
+    fetchData(page) {
       this.listLoading = true
-      getList().then(response => {
+      getList(page).then(response => {
+        this.list_total = response
         this.list = response.data
         this.listLoading = false
       })
