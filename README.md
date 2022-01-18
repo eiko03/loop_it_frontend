@@ -1,6 +1,7 @@
 ##  Proceed
+Change `VUE_APP_BASE_API` in .env.backup to sometihing appropriate for your case
 ```bash
-cp.env.backup .env && npm install && npm run dev
+cp .env.backup .env && npm install && npm run dev
 ```
 
 ## All cases
