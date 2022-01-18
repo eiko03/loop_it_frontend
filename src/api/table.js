@@ -33,11 +33,12 @@ export function getCar(carId) {
   })
 }
 
-export function updateCar(carData) {
+export function updateCar(data) {
+  const id = data.id
   return request({
-    url: '/car/' + carData.id,
+    url: '/car/' + id,
     method: 'put',
-    carData,
+    data,
     header: localStorage.getItem('token')
   })
 }

@@ -33,8 +33,8 @@ const actions = {
     })
   },
   carUpdate({ commit }, carInfo) {
-    const { id, model, brand } = carInfo
     return new Promise((resolve, reject) => {
+      const { id, model, brand } = carInfo
       updateCar({ id: id, model: model, brand: brand }).then(response => {
         resolve()
       }).catch(error => {

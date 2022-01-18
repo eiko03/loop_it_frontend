@@ -1,4 +1,4 @@
-import { login, logout, getInfo, Register } from '@/api/user'
+import { login, logout, getInfo, Register, Refresh } from '@/api/user'
 import { getToken, setToken, removeToken } from '@/utils/auth'
 import { resetRouter } from '@/router'
 
@@ -97,10 +97,12 @@ const actions = {
 
   // remove token
   resetToken({ commit }) {
-    return new Promise(resolve => {
-      removeToken() // must remove  token  first
-      commit('RESET_STATE')
-      resolve()
+    Refresh(state.token).then(() => {
+      return new Promise(resolve => {
+        removeToken()
+        commit('RESET_STATE')
+        resolve()
+      })
     })
   }
 }

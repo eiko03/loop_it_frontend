@@ -31,3 +31,10 @@ export function logout() {
     header: localStorage.getItem('token')
   })
 }
+export function Refresh() {
+  return request({
+    url: '/auth/refresh',
+    method: 'post',
+    header: localStorage.getItem('token')
+  })
+}
