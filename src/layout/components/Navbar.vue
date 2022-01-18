@@ -7,7 +7,7 @@
     <div class="right-menu">
       <el-dropdown class="avatar-container" trigger="click">
         <div class="avatar-wrapper">
-          <img :src="avatar+'?imageView2/1/w/80/h/80'" class="user-avatar">
+          <img src="https://assets.website-files.com/5f0fa4521806fc7695679c1c/5f10fef4989e6f79a170e869_LoopIt_LogoSuite_RGB_Blue_Blinker.svg" class="user-avatar">
           <i class="el-icon-caret-bottom" />
         </div>
         <el-dropdown-menu slot="dropdown" class="user-dropdown">

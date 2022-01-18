@@ -1,4 +1,5 @@
 import axios from 'axios'
+// eslint-disable-next-line no-unused-vars
 import { MessageBox, Message } from 'element-ui'
 import store from '@/store'
 import { getToken } from '@/utils/auth'
@@ -37,18 +38,18 @@ service.interceptors.response.use(
         type: 'error',
         duration: 5 * 1000
       })
-      if (res.code === 403) {
-        // to re-login
-        MessageBox.confirm('You have been logged out, you can cancel to stay on this page, or log in again', 'Confirm logout', {
-          confirmButtonText: 'Re-Login',
-          cancelButtonText: 'Cancel',
-          type: 'warning'
-        }).then(() => {
-          store.dispatch('user/resetToken').then(() => {
-            location.reload()
-          })
-        })
-      }
+      // if (res.code === 4030) {
+      //   // to re-login
+      //   MessageBox.confirm('You have been logged out, you can cancel to stay on this page, or log in again', 'Confirm logout', {
+      //     confirmButtonText: 'Re-Login',
+      //     cancelButtonText: 'Cancel',
+      //     type: 'warning'
+      //   }).then(() => {
+      //     store.dispatch('user/resetToken').then(() => {
+      //       location.reload()
+      //     })
+      //   })
+      // }
       return Promise.reject(new Error(res.message || 'Error'))
     } else {
       return res
