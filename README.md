@@ -29,10 +29,10 @@ npm run lint -- --fix
 ```
 
 ### Remarks
-> Used jest for testing
-> Used postcss
-> Used Vuex For state management
-> Mostly used Element Ui as component
+- Used jest for testing
+- Used postcss
+- Used Vuex For state management
+- Mostly used Element Ui as component
 
 
 
