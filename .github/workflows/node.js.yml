@@ -5,9 +5,17 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - run: |
-              npm install
-              npm run lint
-              npm run build:prod
-              npm run test:unit
+      
+      - name: install
+        run : npm install --fix
+        
+      - name: build
+        run : npm run build:prod
+        
+      - name: lint
+        run : npm run lint
+        
+      - name: test
+        run : npm run test:unit
+
               
