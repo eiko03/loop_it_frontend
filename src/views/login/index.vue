@@ -3,7 +3,7 @@
     <el-form ref="loginForm" :model="loginForm" :rules="loginRules" class="login-form" auto-complete="on" label-position="left">
 
       <div class="title-container">
-        <h3 v-if="this.login" class="title">Login </h3>
+        <h3 v-if="login" class="title">Login </h3>
         <h3 v-else class="title">Register </h3>
       </div>
 

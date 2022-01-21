@@ -43,8 +43,7 @@
             size="mini"
             placeholder="Type to search"
             @keyup.enter.native="onSubmit(scope.$index, scope.row)"
-          >
-          </el-input>
+          />
         </template>
         <template slot-scope="scope">
           <el-button
