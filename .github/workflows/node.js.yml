@@ -15,9 +15,6 @@ jobs:
       - name: test
         run : npm run test:unit
 
-      - name: Analyze code statically using JSHint
-        uses: moneyforward/jshint-action@v0
-
 
 
               
