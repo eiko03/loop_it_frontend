@@ -20,7 +20,7 @@ jobs:
       - name: Get Package Info
         uses: DesignrKnight/js-package-info@v2
         with:
-          node_dir: './'
+          node_dir: './node_modules'
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
 
