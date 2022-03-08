@@ -14,9 +14,12 @@ jobs:
         
       - name: test
         run : npm run test:unit
-
+        
+      - name: setup njsscan
+        run : pip install njsscan
+        
       - name: nodejsscan
-        uses: ajinabraham/njsscan-action@v6 path ./src
+        run: njsscan path ./src
 
 
 
