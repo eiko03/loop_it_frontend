@@ -15,8 +15,13 @@ jobs:
       - name: test
         run : npm run test:unit
         
-      - name: AutoCheck JavaScript tests by Testomatio
-        uses: testomatio/check-tests@1.0.2
+      - run: npm install -g bundle-phobia-cli
+      - run: npm install -g depcheck
+      - name: Get Package Info
+        uses: DesignrKnight/js-package-info@v2
+        with:
+          node_dir: './'
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
 
 
