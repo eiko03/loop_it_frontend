@@ -15,9 +15,6 @@ jobs:
       - name: test
         run : npm run test:unit
 
-      - name: Is Website vulnerable
-        uses: lirantal/is-website-vulnerable@1.15.10
-
         
 
 
