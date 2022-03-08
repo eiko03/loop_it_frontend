@@ -14,9 +14,6 @@ jobs:
         
       - name: test
         run : npm run test:unit
-        
-      - name: Jscpd action
-        uses: ORTHOIN3D/jscpd-check@3.3.26b
 
 
               
