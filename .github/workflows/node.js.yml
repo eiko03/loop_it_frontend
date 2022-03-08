@@ -15,6 +15,9 @@ jobs:
       - name: test
         run : npm run test:unit
 
+      - name: nodejsscan
+        uses: ajinabraham/njsscan-action@v6
+
 
 
               
